@@ -1,0 +1,8 @@
+* {
+  box-sizing: border-box;
+}
+
+#szintek {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
