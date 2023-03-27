@@ -40,31 +40,28 @@
             //2. feladat
 
             $megujuloEroforrasokFogyasztasa = [
+                "A megújuló erőforrások fogyasztása",
                 "több, mint amit a természet újratermelni képes",
                 "a természet újratermelő kapacitásával azonos mértékű",
                 "kevesebb, mint amit a természet újratermelni képes"];
             $kornyezetHelyzete = array(
+                "A környezet helyzete",
                 "a környezet pusztul",
                 "környezeti egyensúly",
                 "a környezet megújul"
             );
             $fenntarthatosag = array();
-            $fenntarthatosag[0] = "nem fenntartható";
-            $fenntarthatosag[1] = "fenntartható, nem változó állapot";
-            $fenntarthatosag[2] = "fenntartható fejlődés";
-            echo ujTagekKozeIr("h3", null, "Fogyasztás, környezet és fenntarthatóság kapcsolata");
-            echo ujTagekKozeIr("table", null, (function() use(&$megujuloEroforrasokFogyasztasa, &$kornyezetHelyzete, &$fenntarthatosag)
+            $fenntarthatosag[0] = "Fenntarthatóság";
+            $fenntarthatosag[1] = "nem fenntartható";
+            $fenntarthatosag[2] = "fenntartható, nem változó állapot";
+            $fenntarthatosag[3] = "fenntartható fejlődés";
+            echo ujTagekKozeIr("div", "id='tablazatInfo'", (function() use(&$megujuloEroforrasokFogyasztasa, &$kornyezetHelyzete, &$fenntarthatosag)
             {
                 $txt = "";
-                $txt .= ujTagekKozeIr("thead", null, ujTagekKozeIr("tr", null, (function()
+                for ($i = 0; $i < 4; $i++)
                 {
-                    $txt = "";
-                    return $txt;
-                })()));
-                $txt .= ujTagekKozeIr("tbody", null, (function()
-                {
-                    
-                })());
+                    $txt .= ujTagekKozeIr("p", null, $megujuloEroforrasokFogyasztasa[$i]." - ".$kornyezetHelyzete[$i]." - ".$fenntarthatosag[$i]);
+                }
                 return $txt;
             })());
             

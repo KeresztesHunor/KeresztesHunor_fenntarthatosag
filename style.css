@@ -6,3 +6,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
+
+#tablazatInfo p:nth-child(1) {
+  font-weight: bold;
+}
